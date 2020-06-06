@@ -1,0 +1,63 @@
+{% extends "otree/Page.html" %}
+{% load otree static %}
+
+{% block global_styles  %}
+<link href="{% static 'global\style.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block global_scripts  %}
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+<!--Make "Select" buttons mutually exclusive-->
+<script>
+$('#label1').click(function(){
+    $(this).addClass('active');
+
+    if($('#label2').hasClass('active')){
+        $('#label2').removeClass('active')
+    } else {
+        $(this).addClass('active')
+    }
+
+    if($('#label0').hasClass('active')){
+        $('#label0').removeClass('active')
+    } else {
+        $(this).addClass('active')
+    }
+});
+
+$('#label2').click(function(){
+    $(this).addClass('active');
+
+    if($('#label1').hasClass('active')){
+        $('#label1').removeClass('active')
+    } else {
+        $(this).addClass('active')
+    }
+
+    if($('#label0').hasClass('active')){
+        $('#label0').removeClass('active')
+    } else {
+        $(this).addClass('active')
+    }
+});
+
+$('#label0').click(function(){
+    $(this).addClass('active');
+
+    if($('#label1').hasClass('active')){
+        $('#label1').removeClass('active')
+    } else {
+        $(this).addClass('active')
+    }
+
+    if($('#label2').hasClass('active')){
+        $('#label2').removeClass('active')
+    } else {
+        $(this).addClass('active')
+    }
+});
+</script>
+{% endblock %}

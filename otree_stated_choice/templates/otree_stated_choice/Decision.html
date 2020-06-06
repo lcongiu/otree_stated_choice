@@ -1,0 +1,55 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Choice {{ page }}/{{ Constants.num_rounds }}
+{% endblock %}
+
+{% block content %}
+
+<p style="text-align:center;">If these were the only two available options, which one would you choose?</p>
+
+<!--Main options-->
+<div class="card-deck my-4">
+    {% for index, option in options_index %}
+  <div class="card">
+    <div class="card-header">Option {{ index }}</div>
+    <div class="card-body">
+        {% for a,l in option %}
+        <h5 class="card-title">{{ a }}</h5>
+        <p class="card-text">{{ l }}</p>
+        <br>
+        {% endfor %}
+        <!--Buttons-->
+        <div class="btn-div">
+        <label id="label{{ index }}" class="btn btn-outline-secondary">
+            <input id="{{ index }}" type="radio" name="choice" value="{{ index }}" style="display: none;" required>Select
+        </label>
+        </div>
+  </div>
+</div>
+    {% endfor %}
+</div>
+
+<!--None option-->
+{% if Constants.none_option %}
+<div class="card">
+    <div class="card-header">None</div>
+    <div class="card-body">
+        <!--<h5 class="card-title">None</h5>-->
+        <p class="card-text" style="text-align:center;">Choose none of the two</p>
+        <br>
+        <!--Buttons-->
+        <div class="btn-div">
+        <label id="label0" class="btn btn-outline-secondary">
+            <input id="0" type="radio" name="choice" value="0" style="display: none;" required>Select
+        </label>
+        </div>
+  </div>
+</div>
+{% endif %}
+
+
+    {% next_button %}
+
+{% endblock %}
