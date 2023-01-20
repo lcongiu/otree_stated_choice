@@ -1,0 +1,25 @@
+
+{% load otree static %}
+
+{% block title %}
+    Page title
+{% endblock %}
+
+{% block content %}
+
+<div class="table">
+    <table>
+        {% for i,t in Constants.optionsMatrix %}
+        <tr>
+            <th>Option {{ i }}</th>
+            {% for l in t %}
+            <td> {{ l }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+    {% next_button %}
+
+{% endblock %}
