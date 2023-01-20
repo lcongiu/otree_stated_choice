@@ -18,7 +18,8 @@ class Decision(Page):
         return dict(
             options=self.participant.vars['choice_sets'][self.round_number - 1],
             options_coded=self.participant.vars['options'][self.round_number - 1],
-            options_index=self.participant.vars['options_index'][self.round_number - 1]
+            options_index=self.participant.vars['options_index'][self.round_number - 1],
+            page=self.subsession.round_number
         )
 
 
