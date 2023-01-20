@@ -11,10 +11,10 @@ SESSION_CONFIG_DEFAULTS = dict(
 
 SESSION_CONFIGS = [
     dict(
-       name='stated_choice',
-       display_name="Stated Choice Experiment",
+       name='stated_choice_sh',
+       display_name="Stated Choice Experiment for SH",
        num_demo_participants=1,
-       app_sequence=['otree_stated_choice']
+       app_sequence=['otree_sc_sh']
     ),
 ]
 
